@@ -8,25 +8,29 @@ public abstract class Electrodomestico {
     private java.lang.Integer Peso = 0;
 
     /**
-     * Constructor de la clase abstracta
-     * @param precioBase
-     * @param color
-     * @param consumo
-     * @param peso
+     * Constructor de la clase abstracta que tiene valores por defecto
      */
-    public Electrodomestico(Float precioBase, String color, String consumo, Integer peso) {
+    public Electrodomestico() {
+        this.PrecioBase = 100f;
+        this.Color = "blanco";
+        this.Consumo = "F";
+        this.Peso = 5;
+    }
+
+    public Electrodomestico(java.lang.Float precioBase,java.lang.Integer peso) {
         this.PrecioBase = precioBase;
-        this.Color = color;
-        this.Consumo = consumo;
+        this.Color = "blanco";
+        this.Consumo = "F";
         this.Peso = peso;
     }
 
     /**
-     * Calcula el precio final
+     * Calcula el precio final a partir del peso que se definia en la tabla
      * @return
      */
     public float precioFinal(){
-           return 0;
+
+        return 0;
     }
 
 
