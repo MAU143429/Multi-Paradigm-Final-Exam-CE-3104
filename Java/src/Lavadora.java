@@ -1,20 +1,20 @@
+/**
+ * Clase Lavadora que hereda de la clase Electrodomestico
+ */
 public class Lavadora extends Electrodomestico{
     /**
      * Atributos de la clase Lavadora
      */
     private java.lang.Integer Carga = 0;
 
-// SE LE PONEN LOS VALORES POR DEFECTO PERO LA CARGA SI LO RECIBE
     /**
      * Constructor de la clase Lavadora, utiliza super para obtener los atributos
      * de la clase padre Electrodomestico
-     * @param precioBase
-     * @param color
-     * @param consumo
-     * @param peso
+     * @param carga
      */
-    public Lavadora(Float precioBase, String color, String consumo, Integer peso) {
-        super(precioBase, color, consumo, peso);
+    public Lavadora(java.lang.Integer carga) {
+        super();
+        this.Carga = carga;
     }
 
    // LO SOBREESCRIBE Y CALCULA EL PRECIO DE ACUERDO CON LA CARGA
@@ -22,10 +22,18 @@ public class Lavadora extends Electrodomestico{
     /**
      * Metodo que calcula el precio final, se sobreescribe a partir del metodo de la
      * clase padre Electrodomestico
-     * @return
+     * @return precio final de la lavadora
      */
     @Override
     public float precioFinal(){
-        return 0;
+        // Si el atributo carga es mayor a 30kg se incrementa el precio en 50
+        if(Carga > 30){
+            java.lang.Float precioLavadora = 0f;
+            precioLavadora = super.precioFinal() + 50f;
+            return precioLavadora;
+        }
+        else{
+            return super.precioFinal();
+        }
     }
 }

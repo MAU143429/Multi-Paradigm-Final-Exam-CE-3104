@@ -29,10 +29,20 @@ public abstract class Electrodomestico {
      * @return
      */
     public float precioFinal(){
-
-        return 0;
+        if(0 <= Peso && Peso <= 19){
+            return 10f;
+        }
+        else if(20 <= Peso && Peso <= 49){
+            return 50f;
+        }
+        else if(50 <= Peso && Peso <= 79){
+            return 80f;
+        }
+        else if(Peso >= 80){
+            return 100f;
+        }
+        else{
+            return 0f;
+        }
     }
-
-
-
 }

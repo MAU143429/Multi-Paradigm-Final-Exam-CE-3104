@@ -1,16 +1,23 @@
+/**
+ * Clase Television que hereda de la clase Electrodomestico
+ */
 public class Television extends Electrodomestico{
+    /**
+     * Atributos de la clase Television
+     */
+    private java.lang.Integer Resolucion = 0;
+    private java.lang.Boolean SinHDMI = false;
 
-    // SE LE PONEN LOS VALORES POR DEFECTO PERO LOS OTROS DOS SI LOS RECIBE
     /**
      * Constructor de la clase Television, hereda de electrodomestico, utiliza super para
      * obtener los atributos
-     * @param precioBase
-     * @param color
-     * @param consumo
-     * @param peso
+     * @param resolucion
+     * @param sinHDMI
      */
-    public Television(Float precioBase, String color, String consumo, Integer peso) {
-        super(precioBase, color, consumo, peso);
+    public Television(java.lang.Integer resolucion, java.lang.Boolean sinHDMI) {
+        super();
+        this.Resolucion = resolucion;
+        this.SinHDMI = sinHDMI;
     }
 // LO SOBREESCRIBE Y CALCULA EL PRECIO DE ACUERDO CON LA RESOLUCION
     // SERA EL PRECIO QUE DA EL DE ELECTRODOMESTICO + IF  SUMA 50 AL PRECIO + IF tiene  1080P
@@ -22,6 +29,19 @@ public class Television extends Electrodomestico{
      */
     @Override
     public float precioFinal(){
-        return 0;
+        // Si tiene una resolucion mayor o igual a 1080p se incrementa el precio en 30%
+        if(Resolucion >= 1080){
+            java.lang.Float precioTelevision = 0f;
+            precioTelevision = super.precioFinal() * 0.30f;
+            return precioTelevision;
+        }
+        else if(SinHDMI){
+            java.lang.Float precioTelevision = 0f;
+            precioTelevision = super.precioFinal() + 50f;
+            return precioTelevision;
+        }
+        else{
+            return super.precioFinal();
+        }
     }
 }
