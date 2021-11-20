@@ -33,10 +33,12 @@ public class Television extends Electrodomestico{
         if(Resolucion >= 1080){
             java.lang.Float precioTelevision = 0f;
             precioTelevision = super.precioFinal() * 0.30f;
+            System.out.println("Precio lavadora: " + super.precioFinal());
             return precioTelevision;
         }
         else if(SinHDMI){
             java.lang.Float precioTelevision = 0f;
+            System.out.println("Precio lavadora: " + super.precioFinal());
             precioTelevision = super.precioFinal() + 50f;
             return precioTelevision;
         }

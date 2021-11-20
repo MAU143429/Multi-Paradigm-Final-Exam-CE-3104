@@ -1,4 +1,4 @@
-public abstract class Electrodomestico {
+public class Electrodomestico {
     /**
      * Atributos de la clase Electrodomestico
      */

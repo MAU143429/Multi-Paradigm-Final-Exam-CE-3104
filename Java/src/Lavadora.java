@@ -30,6 +30,7 @@ public class Lavadora extends Electrodomestico{
         if(Carga > 30){
             java.lang.Float precioLavadora = 0f;
             precioLavadora = super.precioFinal() + 50f;
+            System.out.println("Precio lavadora: " + super.precioFinal());
             return precioLavadora;
         }
         else{
